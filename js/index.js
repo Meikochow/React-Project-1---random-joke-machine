@@ -13,7 +13,6 @@ var _createClass = function () {function defineProperties(target, props) {for (v
         _this2.setState({
           quote: quote,
           //this certain api fetches only the quote, the author always being Ron Swanson, which is why in order to pass the FFC unit test i had to set the author state to a value which cahnges everytime a new quote is fetched
-          //https://ron-swanson-quotes.herokuapp.com/v2/quotes
 
           author: quote });
 
