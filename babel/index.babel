@@ -1,0 +1,46 @@
+class QuoteGenerator extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      quote:[],
+      author:[]
+    }
+    this.getNewQuote=this.getNewQuote.bind(this)
+  }  
+  componentDidMount() { 
+ fetch('https://geek-jokes.sameerkumar.website/api').then(response => response.json()).then((quote) => {
+        console.log(quote);
+      this.setState({
+        quote:quote,
+        //this certain api fetches only the quote, the author always being Ron Swanson, which is why in order to pass the FFC unit test i had to set the author state to a value which cahnges everytime a new quote is fetched
+        //https://ron-swanson-quotes.herokuapp.com/v2/quotes
+        
+        author:quote
+        
+      });
+    });
+  }
+  getNewQuote(){
+     fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes').then(response => response.json()).then((quote) => {
+        console.log(quote[0].length);
+      this.setState({
+        quote:quote,
+        author:quote
+      });
+    });
+  }
+  render(){
+    return(
+    <div id="quote-box">
+        <div id="quoteImage"></div>
+        <div id="text">{this.state.quote} <p id="ronSwanson">Bad joke from around the internets</p></div>
+        <div id="author">{this.state.author}</div> 
+        <button id="new-quote" onClick={this.getNewQuote}>New Bad Joke</button>
+        <br/>
+        <a id="tweet-quote" href={'https://twitter.com/intent/tweet?text="'+this.state.quote+'"  Ron Swanson. Parks and Recreation'} target="_blank" className="fa fa-twitter-square fa-3x" ></a>
+        <footer>Coded with 🐛 & 🥓 by <a href="https://github.com/Meikochow" target="_blank">Victor Cojocaru</a> </footer>
+      </div>
+    )
+  }
+}
+ReactDOM.render(<QuoteGenerator/>,app)

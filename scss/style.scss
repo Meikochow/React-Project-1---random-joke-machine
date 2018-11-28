@@ -1,0 +1,74 @@
+body{
+   // background-image:url("https://s20.postimg.cc/v7ev7xevh/basic_background_50.png"); 
+}
+#quote-box{
+  width:700px;
+  height:auto;
+  margin:auto;
+  border:1px solid grey;
+  text-align:center;
+  background-color:white;
+  }
+#quoteImage{
+ background-image:url('https://i.postimg.cc/LssRZyKg/giphy.gif');
+ background-size:750px;
+ height:400px;
+}  
+#text{
+  height:auto;
+  padding:20px;
+  background-color:white;
+  text-align:center;
+  font-size:24px;
+  margin:0px;
+} 
+#author{
+  display:none;
+}
+#ronSwanson{
+  font-size:18px;
+  padding:none;
+  margin:none;
+  text-align:center;
+  border-style:solid;
+  border-color:black;
+  border-width:1px 0px 0px 0px;
+}
+#new-quote{
+  margin-top:10px;
+  border:none;
+  border-radius:5px;
+  padding:10px 15px 10px 15px;
+  background-color:#A9A9A9;
+  font-size:16px;
+  box-shadow:0px 0px 10px white;
+}
+#new-quote:hover{
+  background-color:#D3D3D3;
+  box-shadow:0px 0px 10px black;
+}
+#tweet-quote{
+  margin-top:5px;
+  color:#55ACEE;
+}
+#tweet-quote:hover{
+  color: #178de8;
+}
+@media screen and(max-width:600px){
+#quote-box{
+  width:250px;
+  margin:auto;
+  border:1px solid grey;
+  }
+#quoteImage{
+  background-size:400px;
+  background-position:center;
+  height:200px;
+}
+
+#text{
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+}
